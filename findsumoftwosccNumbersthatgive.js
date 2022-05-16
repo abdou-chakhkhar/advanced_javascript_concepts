@@ -18,6 +18,38 @@ function test(arr, target){
 
 }
 
+// after optimization
+
+
+
+function test(arr, target){
+
+  
+  let numsMap = {};
+  
+  for(let i=0; i<arr.length; i++){
+    const currentMapVal = numsMap[arr[i]];
+    if(currentMapVal >= 0){
+      return [currentMapVal, i];
+    } else {
+      const numberToFind = target - arr[i];
+      numsMap[numberToFind] = i;
+    }
+  }
+
+  console.log(numsMap);
+  
+  return null;
+  
+  
+}
+
+
+console.log(test([1,3,7,9,2], 11));
+
+
+
+
 
 console.log(test([1,3,7,9,2], 11));
 console.log(test([1,3,7,9,2,4], 11));
