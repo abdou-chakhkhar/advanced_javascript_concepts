@@ -10,7 +10,7 @@ class Stack {
     this.stack = []; 
   }
   peek() {
-    return this.stack[this.stack.length];
+    return this.stack[this.stack.length-1];
   }
   push(value){
     this.stack.push(value)
@@ -25,8 +25,11 @@ class Stack {
 const myStack = new Stack();
 console.log(myStack.peek())
 console.log(myStack.push('google'))
+console.log(myStack.peek())
 console.log(myStack.push('discord'))
+console.log(myStack.peek())
 console.log(myStack.push('udemy'))
+console.log(myStack.peek())
 console.log(myStack.pop())
 // 
 // myStack.push('udemy');
